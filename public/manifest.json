@@ -6,7 +6,7 @@
         {
             "matches": ["https://twitter.com/*", "https://mobile.twitter.com/*"],
             "run_at": "document_start",
-            "js": ["acorn.min.js","script.js"]
+            "js": ["main.js"]
         }
     ]
 }

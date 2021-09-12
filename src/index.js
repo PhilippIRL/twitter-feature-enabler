@@ -1,3 +1,5 @@
+import { parse as parsejs } from 'acorn'
+
 function patchJsonData(data) {
     Object.keys(data.__INITIAL_STATE__.featureSwitch.user.config).forEach(name => {
         let feature = data.__INITIAL_STATE__.featureSwitch.user.config[name]
@@ -12,7 +14,7 @@ function patchJsonDataNode(node) {
     let data = {}
 
     let scriptText = node.innerHTML
-    let doc = acorn.parse(scriptText)
+    let doc = parsejs(scriptText)
     doc.body
         .filter(exp => exp.type === 'ExpressionStatement' && exp.expression.type === 'AssignmentExpression')
         .forEach(exp => {
