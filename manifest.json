@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "twitter feature flag enabler 3000",
+    "version": "0.0.1",
+    "content_scripts": [
+        {
+            "matches": ["https://twitter.com/*", "https://mobile.twitter.com/*"],
+            "run_at": "document_start",
+            "js": ["acorn.min.js","script.js"]
+        }
+    ]
+}
