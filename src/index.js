@@ -14,7 +14,7 @@ function patchJsonDataNode(node) {
     let data = {}
 
     let scriptText = node.innerHTML
-    let doc = parsejs(scriptText)
+    let doc = parsejs(scriptText, {ecmaVersion: '2020'})
     doc.body
         .filter(exp => exp.type === 'ExpressionStatement' && exp.expression.type === 'AssignmentExpression')
         .forEach(exp => {
