@@ -28,9 +28,9 @@ function patchJsonDataNode(node) {
             }
         })
 
-        const patchedData = patchJsonData(data)
+    const patchedData = patchJsonData(data)
 
-        let newScriptText = ''
+    let newScriptText = ''
     for(const [key, value] of Object.entries(patchedData)) {
         newScriptText += `window.${key}=${JSON.stringify(value)};`
     }
