@@ -1,10 +1,13 @@
 import { parse as parsejs } from 'acorn'
 
 function patchJsonData(data) {
+    console.log(data)
     Object.keys(data.__INITIAL_STATE__.featureSwitch.user.config).forEach(name => {
         const feature = data.__INITIAL_STATE__.featureSwitch.user.config[name]
         if(!name.includes('graphql') && feature.value === false) {
             feature.value = true
+        } else if(name === 'dm_reactions_config_active_reactions') {
+            feature.value.push('🥺:pleading_face')
         }
     })
     return data
