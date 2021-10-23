@@ -11,4 +11,7 @@ module.exports = {
             ],
         })
     ],
+    output: {
+        hashFunction: 'sha256' // fix nodejs 17
+    }
 }
