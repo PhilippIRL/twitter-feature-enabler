@@ -1,10 +1,12 @@
 import { parse as parsejs } from 'acorn'
 
+const BLACKLIST = ["responsive_web_cookie_compliance_banner_enabled"]
+
 function patchJsonData(data) {
     console.log(data)
     Object.keys(data.__INITIAL_STATE__.featureSwitch.user.config).forEach(name => {
         const feature = data.__INITIAL_STATE__.featureSwitch.user.config[name]
-        if(!name.includes('graphql') && feature.value === false) {
+        if(!name.includes('graphql') && !BLACKLIST.includes(name) && feature.value === false) {
             feature.value = true
         } else if(name === 'dm_reactions_config_active_reactions') {
             feature.value.push('🥺:pleading_face')
