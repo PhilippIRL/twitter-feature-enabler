@@ -13,7 +13,7 @@
         "webpack-cli": "^4.8.0"
     },
     "dependencies": {
-        "acorn": "^8.5.0"
+        "acorn": "^8.7.1"
     },
     "scripts": {
         "build": "yarn run webpack",

@@ -1,7 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
@@ -13,5 +13,6 @@ module.exports = {
     ],
     output: {
         hashFunction: 'sha256' // fix nodejs 17
-    }
+    },
+    devtool: 'source-map'
 }
