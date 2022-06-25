@@ -6,7 +6,13 @@
         {
             "matches": ["https://twitter.com/*", "https://mobile.twitter.com/*"],
             "run_at": "document_start",
-            "js": ["main.js"]
+            "js": ["contentScript.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["/inject.js"],
+            "matches": ["https://twitter.com/*", "https://mobile.twitter.com/*"]
         }
     ]
 }
