@@ -1,7 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
